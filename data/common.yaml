@@ -1,14 +1,15 @@
 ---
 puppet_applocker_fervid::default_applocker_rules:
   Exec %windir%:
+    ensure: "present"
     action: "Allow"
     conditions:
       path: "%WINDIR%\\*"
-    exceptions:
-      - '%SYSTEM32%\spool\drivers\color\*'
-      - '%SYSTEM32%\Tasks\*'
-      - '%WINDIR%\Tasks\*'
-      - '%WINDIR%\Temp\*'
+    #exceptions:
+    #  - '%SYSTEM32%\spool\drivers\color\*'
+    #  - '%SYSTEM32%\Tasks\*'
+    #  - '%WINDIR%\Tasks\*'
+    #  - '%WINDIR%\Temp\*'
     description: "Allow all users to run apps in windir"
     mode: "NotConfigured"
     rule_type: "path"
