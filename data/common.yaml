@@ -1,1 +1,12 @@
---- {}
+---
+puppet_applocker_fervid::default_applocker_rules:
+  Exec %windir%:
+    ensure: "present"
+    action: "Allow"
+    conditions:
+      path: "%WINDIR%\\*"
+    description: "Allow all users to run apps in windir"
+    mode: "NotConfigured"
+    rule_type: "path"
+    type: "Exe"
+    user_or_group_sid: "S-1-1-0"
