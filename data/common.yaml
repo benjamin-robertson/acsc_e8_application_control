@@ -1,7 +1,6 @@
 ---
 puppet_applocker_fervid::default_applocker_rules:
   Exec %windir%:
-    ensure: "present"
     action: "Allow"
     conditions:
       path: "%WINDIR%\\*"
