@@ -19,8 +19,8 @@ puppet_applocker_fervid::default_applocker_rules:
     ensure: "present"
     action: "Allow"
     conditions:
-      path: "%PROGRAMFILES%\*"
-    description: "Allow all users to run apps in %PROGRAMFILES%\*"
+      path: "%PROGRAMFILES%\\*"
+    description: "Allow all users to run apps in programfiles"
     rule_type: "path"
     type: "Exe"
     user_or_group_sid: "S-1-1-0"
