@@ -10,8 +10,8 @@ class puppet_applocker_fervid::rules (
 
   # Apply applocker rules
   $applocker_rules.each | String $name, Hash $rule | {
-    applocker_rule { $name:
-      * => $rule
-    }
+    #applocker_rule { $name:
+    #  * => $rule
+    #}
   }
 }
