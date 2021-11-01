@@ -6,11 +6,11 @@
 #   include puppet_applocker_fervid
 class puppet_applocker_fervid (
   Hash $additional_applocker_rules = {},
-  Enum['Audit','Disabled','Enabled'] $executable_rules = 'Enabled',
-  Enum['Audit','Disabled','Enabled'] $msi_rules = 'Enabled',
-  Enum['Audit','Disabled','Enabled'] $dll_rules = 'Enabled',
-  Enum['Audit','Disabled','Enabled'] $script_rules = 'Enabled',
-  Enum['Audit','Disabled','Enabled'] $packaged_app_rules = 'Enabled',
+  Enum['Audit','Enabled'] $executable_rules = 'Enabled',
+  Enum['Audit','Enabled'] $msi_rules = 'Enabled',
+  Enum['Audit','Enabled'] $dll_rules = 'Enabled',
+  Enum['Audit','Enabled'] $script_rules = 'Enabled',
+  Enum['Audit','Enabled'] $packaged_app_rules = 'Enabled',
   Boolean $start_service = true,
 ) {
   # lookup default rules
@@ -21,6 +21,15 @@ class puppet_applocker_fervid (
   # Apply rules
   class { 'puppet_applocker_fervid::rules':
     applocker_rules => $applocker_rules,
+  }
+
+  # Set rule status
+  class { 'puppet_applocker_fervid::rule_status':
+    executable_rules   => $executable_rules,
+    msi_rules          => $msi_rules,
+    dll_rules          => $dll_rules,
+    script_rules       => $script_rules,
+    packaged_app_rules => $packaged_app_rules,
   }
 
   if $start_service {
