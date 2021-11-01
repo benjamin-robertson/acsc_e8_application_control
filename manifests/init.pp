@@ -11,6 +11,7 @@ class puppet_applocker_fervid (
   Enum['Audit','Disabled','Enabled'] $dll_rules = 'Enabled',
   Enum['Audit','Disabled','Enabled'] $script_rules = 'Enabled',
   Enum['Audit','Disabled','Enabled'] $packaged_app_rules = 'Enabled',
+  Boolean $start_service = true,
 ) {
   # lookup default rules
   $default_applocker_rules = lookup(puppet_applocker_fervid::default_applocker_rules)
@@ -20,6 +21,10 @@ class puppet_applocker_fervid (
   # Apply rules
   class { 'puppet_applocker_fervid::rules':
     applocker_rules => $applocker_rules,
+  }
+
+  if $start_service {
+    include puppet_applocker_fervid::service
   }
 
 }

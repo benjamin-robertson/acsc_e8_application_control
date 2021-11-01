@@ -5,5 +5,9 @@
 # @example
 #   include puppet_applocker_fervid::service
 class puppet_applocker_fervid::service {
-
+  service { 'application identity service':
+    ensure => running,
+    name   => 'AppIDSvc',
+    enable => true,
+  }
 }
