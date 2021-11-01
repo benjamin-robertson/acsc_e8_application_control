@@ -11,7 +11,7 @@ puppet_applocker_fervid::default_applocker_rules:
       - '%WINDIR%\Tasks\*'
       - '%WINDIR%\Temp\*'
     description: "Allow all users to run apps in windir"
-    ##mode: "Enabled"
+    mode: "AuditOnly"
     rule_type: "path"
     type: "Exe"
     user_or_group_sid: "S-1-1-0"
@@ -21,7 +21,7 @@ puppet_applocker_fervid::default_applocker_rules:
     conditions:
       path: "%PROGRAMFILES%\\*"
     description: "Allow all users to run apps in programfiles"
-    ##mode: "Enabled"
+    mode: "AuditOnly"
     rule_type: "path"
     type: "Exe"
     user_or_group_sid: "S-1-1-0"
@@ -31,7 +31,7 @@ puppet_applocker_fervid::default_applocker_rules:
     conditions:
       path: "%OSDRIVE%\\CHOCO\\*"
     description: "Allow all users to run apps in osdrive choco"
-    #mode: "Enabled"
+    mode: "AuditOnly"
     rule_type: "path"
     type: "Exe"
     user_or_group_sid: "S-1-1-0"

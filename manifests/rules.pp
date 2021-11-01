@@ -16,7 +16,7 @@ class puppet_applocker_fervid::rules (
       conditions        => $rule['conditions'],
       exceptions        => $rule['exceptions'],
       description       => $rule['description'],
-      #mode              => $rule['mode'],
+      mode              => $rule['mode'],
       rule_type         => $rule['rule_type'],
       type              => $rule['type'],
       user_or_group_sid => $rule['user_or_group_sid'],
