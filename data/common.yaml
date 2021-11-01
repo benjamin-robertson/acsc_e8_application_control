@@ -11,7 +11,7 @@ puppet_applocker_fervid::default_applocker_rules:
       - '%WINDIR%\Tasks\*'
       - '%WINDIR%\Temp\*'
     description: "Allow all users to run apps in windir"
-    mode: "Enabled"
+    ##mode: "Enabled"
     rule_type: "path"
     type: "Exe"
     user_or_group_sid: "S-1-1-0"
@@ -21,7 +21,7 @@ puppet_applocker_fervid::default_applocker_rules:
     conditions:
       path: "%PROGRAMFILES%\\*"
     description: "Allow all users to run apps in programfiles"
-    mode: "Enabled"
+    ##mode: "Enabled"
     rule_type: "path"
     type: "Exe"
     user_or_group_sid: "S-1-1-0"
@@ -31,7 +31,7 @@ puppet_applocker_fervid::default_applocker_rules:
     conditions:
       path: "%OSDRIVE%\\CHOCO\\*"
     description: "Allow all users to run apps in osdrive choco"
-    mode: "Enabled"
+    #mode: "Enabled"
     rule_type: "path"
     type: "Exe"
     user_or_group_sid: "S-1-1-0"
@@ -52,7 +52,7 @@ puppet_applocker_fervid::default_applocker_rules:
       - '%WINDIR%\Temp\*'
       - '%WINDIR%\tracing\*'
     description: "Allow scripts in the windir directory"
-    mode: "Enabled"
+    #mode: "Enabled"
     rule_type: "path"
     type: "Script"
     user_or_group_sid: "S-1-1-0"
@@ -62,7 +62,7 @@ puppet_applocker_fervid::default_applocker_rules:
     conditions:
       path: "%PROGRAMFILES%\\*"
     description: "Allow scripts in the programfiles directory"
-    mode: "Enabled"
+    #mode: "Enabled"
     rule_type: "path"
     type: "Script"
     user_or_group_sid: "S-1-1-0"
@@ -72,7 +72,7 @@ puppet_applocker_fervid::default_applocker_rules:
     conditions:
       path: "%PROGRAMFILES%\\*"
     description: "Allow dll in the programfiles directory"
-    mode: "Enabled"
+    #mode: "Enabled"
     rule_type: "path"
     type: "Dll"
     user_or_group_sid: "S-1-1-0"
@@ -87,7 +87,7 @@ puppet_applocker_fervid::default_applocker_rules:
       - '%WINDIR%\Tasks\*'
       - '%WINDIR%\Temp\'
     description: "Allow dll in the programfiles directory"
-    mode: "Enabled"
+    #mode: "Enabled"
     rule_type: "path"
     type: "Dll"
     user_or_group_sid: "S-1-1-0"
@@ -101,7 +101,7 @@ puppet_applocker_fervid::default_applocker_rules:
       hi_version: "*"
       lo_version: "*"
     description: "Allow Package app rule Microsoft corporation"
-    mode: "Enabled"
+    #mode: "Enabled"
     rule_type: "publisher"
     type: "Appx"
     user_or_group_sid: "S-1-1-0"
@@ -115,7 +115,7 @@ puppet_applocker_fervid::default_applocker_rules:
       hi_version: "*"
       lo_version: "*"
     description: "Allow Package app rule Microsoft corporation (Windows)"
-    mode: "Enabled"
+    #mode: "Enabled"
     rule_type: "publisher"
     type: "Appx"
     user_or_group_sid: "S-1-1-0"
@@ -129,7 +129,7 @@ puppet_applocker_fervid::default_applocker_rules:
       hi_version: "*"
       lo_version: "*"
     description: "Allow Package app rule Microsoft corporation"
-    mode: "Enabled"
+    #mode: "Enabled"
     rule_type: "publisher"
     type: "Msi"
     user_or_group_sid: "S-1-1-0"
@@ -143,7 +143,7 @@ puppet_applocker_fervid::default_applocker_rules:
       hi_version: "*"
       lo_version: "*"
     description: "Allow Package app rule Microsoft corporation (Windows)"
-    mode: "Enabled"
+    #mode: "Enabled"
     rule_type: "publisher"
     type: "Msi"
     user_or_group_sid: "S-1-1-0"
