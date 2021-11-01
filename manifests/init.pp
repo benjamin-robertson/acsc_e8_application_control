@@ -40,13 +40,13 @@ class puppet_applocker_fervid (
   }
 
   # Set rule status
-  class { 'puppet_applocker_fervid::rule_status':
-    executable_rules   => $executable_rules,
-    msi_rules          => $msi_rules,
-    dll_rules          => $dll_rules,
-    script_rules       => $script_rules,
-    packaged_app_rules => $packaged_app_rules,
-  }
+  #class { 'puppet_applocker_fervid::rule_status':
+  #  executable_rules   => $executable_rules,
+  #  msi_rules          => $msi_rules,
+  #  dll_rules          => $dll_rules,
+  #  script_rules       => $script_rules,
+  #  packaged_app_rules => $packaged_app_rules,
+  #}
 
   if $start_service {
     include puppet_applocker_fervid::service
