@@ -5,7 +5,11 @@
 # @example
 #   include puppet_applocker_fervid
 class puppet_applocker_fervid (
-  Hash $additional_applocker_rules = {},
+  Hash $additional_exec_applocker_rules = {},
+  Hash $additional_msi_applocker_rules = {},
+  Hash $additional_appx_applocker_rules = {},
+  Hash $additional_script_applocker_rules = {},
+  Hash $additional_dll_applocker_rules = {},
   Enum['Audit','Enabled'] $executable_rules = 'Enabled',
   Enum['Audit','Enabled'] $msi_rules = 'Enabled',
   Enum['Audit','Enabled'] $dll_rules = 'Enabled',
@@ -14,13 +18,25 @@ class puppet_applocker_fervid (
   Boolean $start_service = true,
 ) {
   # lookup default rules
-  $default_applocker_rules = lookup(puppet_applocker_fervid::default_applocker_rules)
+  $default_exec_applocker_rules = lookup(puppet_applocker_fervid::exec_applocker_rules)
+  $default_msi_applocker_rules = lookup(puppet_applocker_fervid::msi_applocker_rules)
+  $default_appx_applocker_rules = lookup(puppet_applocker_fervid::appx_applocker_rules)
+  $default_script_applocker_rules = lookup(puppet_applocker_fervid::script_applocker_rules)
+  $default_dll_applocker_rules = lookup(puppet_applocker_fervid::dll_applocker_rules)
   # merge hashes
-  $applocker_rules = merge($default_applocker_rules, $additional_applocker_rules)
+  $exec_applocker_rules = merge($default_exec_applocker_rules, $additional_exec_applocker_rules)
+  $msi_applocker_rules = merge($default_msi_applocker_rules, $additional_msi_applocker_rules)
+  $appx_applocker_rules = merge($default_appx_applocker_rules, $additional_appx_applocker_rules)
+  $script_applocker_rules = merge($default_script_applocker_rules, $additional_script_applocker_rules)
+  $dll_applocker_rules = merge($default_dll_applocker_rules, $additional_dll_applocker_rules)
 
   # Apply rules
   class { 'puppet_applocker_fervid::rules':
-    applocker_rules => $applocker_rules,
+    exec_applocker_rules   => $exec_applocker_rules,
+    msi_applocker_rules    => $msi_applocker_rules,
+    appx_applocker_rules   => $appx_applocker_rules,
+    script_applocker_rules => $script_applocker_rules,
+    dll_applocker_rules    => $dll_applocker_rules,
   }
 
   # Set rule status
