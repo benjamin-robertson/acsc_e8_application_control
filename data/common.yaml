@@ -41,6 +41,7 @@ acsc_e8_application_control::script_applocker_rules:
     exceptions:
       - '%SYSTEM32%\Com\dmp\*'
       - '%SYSTEM32%\FxsTmp\*'
+      - '%System32%\Microsoft\Crypto\RSA\MachineKeys\*'
       - '%SYSTEM32%\spool\drivers\color\*'
       - '%SYSTEM32%\spool\PRINTERS\*'
       - '%SYSTEM32%\spool\SERVERS\*'
