@@ -6,6 +6,10 @@ All notable changes to this project will be documented in this file.
 
 **Features**
 
+- Initial release
+
 **Bugfixes**
 
 **Known Issues**
+
+- Audit only option not working, can only run the module in enforce mode.

@@ -1,9 +1,9 @@
 # @summary A short summary of the purpose of this class
 #
-# A description of what this class does
+# Starts applocker service
 #
 # @example
-#   include acsc_e8_application_control::service
+#   private class
 class acsc_e8_application_control::service {
   service { 'application identity service':
     ensure => running,

@@ -1,9 +1,9 @@
 # @summary A short summary of the purpose of this class
 #
-# A description of what this class does
+# Sets applocker rules
 #
 # @example
-#   include acsc_e8_application_control::rules
+#   private class
 class acsc_e8_application_control::rules (
   Hash $exec_applocker_rules,
   Hash $msi_applocker_rules,

@@ -1,10 +1,9 @@
 # acsc_e8_application_control
 
-Welcome to your new module. A short overview of the generated parts can be found
-in the [PDK documentation][1].
-
-The README template below provides a starting point with details about what
-information to include in your README.
+A Puppet module which automates the setup of ACSC essential 8 application control on Windows without requiring the use of group policy. 
+For more information about applocker: https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview
+For more information about Essential 8: https://www.cyber.gov.au/acsc/view-all-content/essential-eight
+For more information about Application control: https://www.cyber.gov.au/acsc/view-all-content/publications/implementing-application-control
 
 ## Table of Contents
 
@@ -19,11 +18,7 @@ information to include in your README.
 
 ## Description
 
-Briefly tell users why they might want to use your module. Explain what your
-module does and what kind of problems users can solve with it.
-
-This should be a fairly short description helps the user decide if your module
-is what they want.
+Use this module to easily implement basic application control on your Windows hosts. This module will implement application control as described in 
 
 ## Setup
 
@@ -63,38 +58,6 @@ examples. Include three to five examples of the most important or common tasks a
 user can accomplish with your module. Show users how to accomplish more complex
 tasks that involve different types, classes, and functions working in tandem.
 
-## Reference
-
-This section is deprecated. Instead, add reference information to your code as
-Puppet Strings comments, and then use Strings to generate a REFERENCE.md in your
-module. For details on how to add code comments and generate documentation with
-Strings, see the [Puppet Strings documentation][2] and [style guide][3].
-
-If you aren't ready to use Strings yet, manually create a REFERENCE.md in the
-root of your module directory and list out each of your module's classes,
-defined types, facts, functions, Puppet tasks, task plans, and resource types
-and providers, along with the parameters for each.
-
-For each element (class, defined type, function, and so on), list:
-
-* The data type, if applicable.
-* A description of what the element does.
-* Valid values, if the data type doesn't make it obvious.
-* Default value, if any.
-
-For example:
-
-```
-### `pet::cat`
-
-#### Parameters
-
-##### `meow`
-
-Enables vocalization in your cat. Valid options: 'string'.
-
-Default: 'medium-loud'.
-```
 
 ## Limitations
 
@@ -103,8 +66,8 @@ warnings.
 
 ## Development
 
-In the Development section, tell other users the ground rules for contributing
-to your project and how they should submit their work.
+Open to Pull requests :)
+
 
 ## Release Notes/Contributors/Etc. **Optional**
 

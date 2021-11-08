@@ -96,4 +96,7 @@ class acsc_e8_application_control (
     include acsc_e8_application_control::service
   }
 
+  # Apply applocker rules before starting the service
+  Class['acsc_e8_application_control::rules'] -> Class['acsc_e8_application_control::rule_status'] -> Class['acsc_e8_application_control::service']
+
 }
