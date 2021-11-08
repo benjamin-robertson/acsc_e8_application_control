@@ -7,59 +7,46 @@
 #
 # @param [Hash] additional_exec_applocker_rules
 #     Additional exec applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/fervid/applocker
+#     Defaults - {}
 #
 # @param [Hash] additional_msi_applocker_rules
 #     Additional msi applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/fervid/applocker
+#     Defaults - {}
 #
 # @param [Hash] additional_appx_applocker_rules
 #     Additional appx applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/fervid/applocker
+#     Defaults - {}
 #
 # @param [Hash] additional_script_applocker_rules
 #     Additional script applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/fervid/applocker
+#     Defaults - {}
 #
 # @param [Hash] additional_dll_applocker_rules
 #     Additional dll applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/fervid/applocker
+#     Defaults - {}
 #
 # @param [Enum['Enabled']] executable_rules
 #     Executable rule status, Enabled (or Audit, currently not supported)
+#     Defaults - Enabled
 #
 # @param [Enum['Enabled']] msi_rules
 #     Msi rule status, Enabled (or Audit, currently not supported)
+#     Defaults - Enabled
 #
 # @param [Enum['Enabled']] dll_rules
 #     Dll rule status, Enabled (or Audit, currently not supported)
+#     Defaults - Enabled
 #
 # @param [Enum['Enabled']] script_rules
 #     Script rule status, Enabled (or Audit, currently not supported)
+#     Defaults - Enabled
 #
 # @param [Enum['Enabled']] packaged_app_rules
 #     Packaged_app_rules rule status, Enabled (or Audit, currently not supported)
+#     Defaults - Enabled
 #
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
+# @param [Boolean] start_service
+#     Start the appID service, defaults true.
 #
 class acsc_e8_application_control (
   Hash $additional_exec_applocker_rules = {},
@@ -67,11 +54,11 @@ class acsc_e8_application_control (
   Hash $additional_appx_applocker_rules = {},
   Hash $additional_script_applocker_rules = {},
   Hash $additional_dll_applocker_rules = {},
-  Enum['Enabled'] $executable_rules = 'Enabled',
-  Enum['Enabled'] $msi_rules = 'Enabled',
-  Enum['Enabled'] $dll_rules = 'Enabled',
-  Enum['Enabled'] $script_rules = 'Enabled',
-  Enum['Enabled'] $packaged_app_rules = 'Enabled',
+  Enum['Audit','Enabled'] $executable_rules = 'Enabled',
+  Enum['Audit','Enabled'] $msi_rules = 'Enabled',
+  Enum['Audit','Enabled'] $dll_rules = 'Enabled',
+  Enum['Audit','Enabled'] $script_rules = 'Enabled',
+  Enum['Audit','Enabled'] $packaged_app_rules = 'Enabled',
   Boolean $start_service = true,
 ) {
   # lookup default rules
@@ -97,13 +84,13 @@ class acsc_e8_application_control (
   }
 
   # Set rule status
-  #class { 'acsc_e8_application_control::rule_status':
-  #  executable_rules   => $executable_rules,
-  #  msi_rules          => $msi_rules,
-  #  dll_rules          => $dll_rules,
-  #  script_rules       => $script_rules,
-  #  packaged_app_rules => $packaged_app_rules,
-  #}
+  class { 'acsc_e8_application_control::rule_status':
+    executable_rules   => $executable_rules,
+    msi_rules          => $msi_rules,
+    dll_rules          => $dll_rules,
+    script_rules       => $script_rules,
+    packaged_app_rules => $packaged_app_rules,
+  }
 
   if $start_service {
     include acsc_e8_application_control::service
