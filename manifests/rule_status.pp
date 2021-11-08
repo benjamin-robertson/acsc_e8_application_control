@@ -1,9 +1,9 @@
 # @summary A short summary of the purpose of this class
 #
-# A description of what this class does
+# Enforces rule status of each applocker rule type
 #
 # @example
-#   include acsc_e8_application_control::rule_status
+#   private class
 class acsc_e8_application_control::rule_status (
   Enum['Audit','Enabled'] $executable_rules,
   Enum['Audit','Enabled'] $msi_rules,
