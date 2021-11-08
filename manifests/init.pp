@@ -1,20 +1,77 @@
-# @summary A short summary of the purpose of this class
+# @summary 
 #
-# A description of what this class does
+# Enforce acsc E8 application control
 #
 # @example
 #   include acsc_e8_application_control
+#
+# @param [Hash] additional_exec_applocker_rules
+#     Additional exec applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/fervid/applocker
+#
+# @param [Hash] additional_msi_applocker_rules
+#     Additional msi applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/fervid/applocker
+#
+# @param [Hash] additional_appx_applocker_rules
+#     Additional appx applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/fervid/applocker
+#
+# @param [Hash] additional_script_applocker_rules
+#     Additional script applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/fervid/applocker
+#
+# @param [Hash] additional_dll_applocker_rules
+#     Additional dll applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/fervid/applocker
+#
+# @param [Enum['Enabled']] executable_rules
+#     Executable rule status, Enabled (or Audit, currently not supported)
+#
+# @param [Enum['Enabled']] msi_rules
+#     Msi rule status, Enabled (or Audit, currently not supported)
+#
+# @param [Enum['Enabled']] dll_rules
+#     Dll rule status, Enabled (or Audit, currently not supported)
+#
+# @param [Enum['Enabled']] script_rules
+#     Script rule status, Enabled (or Audit, currently not supported)
+#
+# @param [Enum['Enabled']] packaged_app_rules
+#     Packaged_app_rules rule status, Enabled (or Audit, currently not supported)
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
 class acsc_e8_application_control (
   Hash $additional_exec_applocker_rules = {},
   Hash $additional_msi_applocker_rules = {},
   Hash $additional_appx_applocker_rules = {},
   Hash $additional_script_applocker_rules = {},
   Hash $additional_dll_applocker_rules = {},
-  Enum['Audit','Enabled'] $executable_rules = 'Enabled',
-  Enum['Audit','Enabled'] $msi_rules = 'Enabled',
-  Enum['Audit','Enabled'] $dll_rules = 'Enabled',
-  Enum['Audit','Enabled'] $script_rules = 'Enabled',
-  Enum['Audit','Enabled'] $packaged_app_rules = 'Enabled',
+  Enum['Enabled'] $executable_rules = 'Enabled',
+  Enum['Enabled'] $msi_rules = 'Enabled',
+  Enum['Enabled'] $dll_rules = 'Enabled',
+  Enum['Enabled'] $script_rules = 'Enabled',
+  Enum['Enabled'] $packaged_app_rules = 'Enabled',
   Boolean $start_service = true,
 ) {
   # lookup default rules
