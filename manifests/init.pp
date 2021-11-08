@@ -54,11 +54,11 @@ class acsc_e8_application_control (
   Hash $additional_appx_applocker_rules = {},
   Hash $additional_script_applocker_rules = {},
   Hash $additional_dll_applocker_rules = {},
-  Enum['Audit','Enabled'] $executable_rules = 'Enabled',
-  Enum['Audit','Enabled'] $msi_rules = 'Enabled',
-  Enum['Audit','Enabled'] $dll_rules = 'Enabled',
-  Enum['Audit','Enabled'] $script_rules = 'Enabled',
-  Enum['Audit','Enabled'] $packaged_app_rules = 'Enabled',
+  Enum['Enabled'] $executable_rules = 'Enabled',
+  Enum['Enabled'] $msi_rules = 'Enabled',
+  Enum['Enabled'] $dll_rules = 'Enabled',
+  Enum['Enabled'] $script_rules = 'Enabled',
+  Enum['Enabled'] $packaged_app_rules = 'Enabled',
   Boolean $start_service = true,
 ) {
   # lookup default rules
