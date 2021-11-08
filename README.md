@@ -18,63 +18,42 @@ For more information about Application control: https://www.cyber.gov.au/acsc/vi
 
 ## Description
 
-Use this module to easily implement basic application control on your Windows hosts. This module will implement application control as described in 
+Use this module to easily implement basic application control on your Windows hosts. This module will implement application control as described in [ACSC link][2] [Backup link][1]
 
 ## Setup
 
 ### What acsc_e8_application_control affects **OPTIONAL**
 
-If it's obvious what your module touches, you can skip this section. For
-example, folks can probably figure out that your mysql_instance module affects
-their MySQL instances.
+See [here][2] page 2 for information on which rules will be setup. In addition, the c:\choco will also be whitelisted for executables to allow chocolatey to run from its default directly. Chocolate is commonly used in conjunction with Puppet on Window for package management. [Chocolately][3]
 
-If there's more that they should know about, though, this is the place to
-mention:
-
-* Files, packages, services, or operations that the module will alter, impact,
-  or execute.
-* Dependencies that your module automatically installs.
-* Warnings or other important notices.
+**Warning** Please only apply this module to test nodes initially. Applocker can prevent application from running and could cause outages in production systems. 
 
 ### Setup Requirements **OPTIONAL**
 
-If your module requires anything extra before setting up (pluginsync enabled,
-another module, etc.), mention it here.
+The following modules are dependencies are required acsc_e8_application_control
 
-If your most recent release breaks compatibility or requires particular steps
-for upgrading, you might want to include an additional "Upgrading" section here.
+- [fervid-applocker][4]
+- [puppetlabs-registry][5]
 
 ### Beginning with acsc_e8_application_control
 
-The very basic steps needed for a user to get the module up and running. This
-can include setup steps, if necessary, or it can be an example of the most basic
-use of the module.
+`include acsc_e8_application_control`
 
 ## Usage
 
-Include usage examples for common use cases in the **Usage** section. Show your
-users how to use your module to solve problems, and be sure to include code
-examples. Include three to five examples of the most important or common tasks a
-user can accomplish with your module. Show users how to accomplish more complex
-tasks that involve different types, classes, and functions working in tandem.
+
 
 
 ## Limitations
 
-In the Limitations section, list any incompatibilities, known issues, or other
-warnings.
+Currently, we are unable to set the Applocker rules to run in audit only. This is due to a limitation in the underlying custom type. 
 
 ## Development
 
 Open to Pull requests :)
 
-
-## Release Notes/Contributors/Etc. **Optional**
-
-If you aren't using changelog, put your release notes here (though you should
-consider using changelog). You can also add any additional sections you feel are
-necessary or important to include here. Please use the `##` header.
-
-[1]: https://puppet.com/docs/pdk/latest/pdk_generating_modules.html
-[2]: https://puppet.com/docs/puppet/latest/puppet_strings.html
-[3]: https://puppet.com/docs/puppet/latest/puppet_strings_style.html
+[1]: https://github.com/benjamin-robertson/acsc_e8_application_control/blob/main/files/PROTECT%20-%20Implementing%20Application%20Control%20(October%202021).pdf
+[2]: https://www.cyber.gov.au/sites/default/files/2021-10/PROTECT%20-%20Implementing%20Application%20Control%20%28October%202021%29.pdf
+[3]: https://chocolatey.org/
+[4]: https://forge.puppet.com/modules/fervid/applocker
+[5]: https://forge.puppet.com/modules/puppetlabs/registry
