@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-describe 'puppet_applocker_fervid::service' do
+describe 'acsc_e8_application_control::service' do
   on_supported_os.each do |os, os_facts|
     context "on #{os}" do
       let(:facts) { os_facts }

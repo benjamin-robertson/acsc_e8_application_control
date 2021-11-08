@@ -3,8 +3,8 @@
 # A description of what this class does
 #
 # @example
-#   include puppet_applocker_fervid::rule_status
-class puppet_applocker_fervid::rule_status (
+#   include acsc_e8_application_control::rule_status
+class acsc_e8_application_control::rule_status (
   Enum['Audit','Enabled'] $executable_rules,
   Enum['Audit','Enabled'] $msi_rules,
   Enum['Audit','Enabled'] $dll_rules,

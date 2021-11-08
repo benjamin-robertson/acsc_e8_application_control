@@ -3,8 +3,8 @@
 # A description of what this class does
 #
 # @example
-#   include puppet_applocker_fervid::rules
-class puppet_applocker_fervid::rules (
+#   include acsc_e8_application_control::rules
+class acsc_e8_application_control::rules (
   Hash $exec_applocker_rules,
   Hash $msi_applocker_rules,
   Hash $appx_applocker_rules,

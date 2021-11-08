@@ -1,5 +1,5 @@
 ---
-puppet_applocker_fervid::exec_applocker_rules:
+acsc_e8_application_control::exec_applocker_rules:
   Exec %windir/%:
     ensure: "present"
     action: "Allow"
@@ -32,7 +32,7 @@ puppet_applocker_fervid::exec_applocker_rules:
     rule_type: "path"
     type: "Exe"
     user_or_group_sid: "S-1-1-0"
-puppet_applocker_fervid::script_applocker_rules:
+acsc_e8_application_control::script_applocker_rules:
   Script %WINDIR/%:
     ensure: "present"
     action: "Allow"
@@ -62,7 +62,7 @@ puppet_applocker_fervid::script_applocker_rules:
     rule_type: "path"
     type: "Script"
     user_or_group_sid: "S-1-1-0"
-puppet_applocker_fervid::dll_applocker_rules:
+acsc_e8_application_control::dll_applocker_rules:
   DLL %PROGRAMFILES/%:
     ensure: "present"
     action: "Allow"
@@ -86,7 +86,7 @@ puppet_applocker_fervid::dll_applocker_rules:
     rule_type: "path"
     type: "Dll"
     user_or_group_sid: "S-1-1-0"
-puppet_applocker_fervid::appx_applocker_rules:
+acsc_e8_application_control::appx_applocker_rules:
   Packaged app MS corp:
     ensure: "present"
     action: "Allow"
@@ -113,7 +113,7 @@ puppet_applocker_fervid::appx_applocker_rules:
     rule_type: "publisher"
     type: "Appx"
     user_or_group_sid: "S-1-1-0"
-puppet_applocker_fervid::msi_applocker_rules:
+acsc_e8_application_control::msi_applocker_rules:
   MSI rule MS corp:
     ensure: "present"
     action: "Allow"

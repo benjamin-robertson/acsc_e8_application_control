@@ -3,8 +3,8 @@
 # A description of what this class does
 #
 # @example
-#   include puppet_applocker_fervid::service
-class puppet_applocker_fervid::service {
+#   include acsc_e8_application_control::service
+class acsc_e8_application_control::service {
   service { 'application identity service':
     ensure => running,
     name   => 'AppIDSvc',
