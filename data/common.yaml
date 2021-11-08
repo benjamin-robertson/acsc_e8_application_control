@@ -82,6 +82,7 @@ acsc_e8_application_control::dll_applocker_rules:
       - '%SYSTEM32%\Tasks\*'
       - '%WINDIR%\Tasks\*'
       - '%WINDIR%\Temp\'
+      - '%System32%\Microsoft\Crypto\RSA\MachineKeys\*'
     description: "Allow dll in the programfiles directory"
     rule_type: "path"
     type: "Dll"
