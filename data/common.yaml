@@ -6,6 +6,7 @@ acsc_e8_application_control::exec_applocker_rules:
     conditions:
       path: "%WINDIR%\\*"
     exceptions:
+      - '%System32%\Microsoft\Crypto\RSA\MachineKeys\*'
       - '%SYSTEM32%\spool\drivers\color\*'
       - '%SYSTEM32%\Tasks\*'
       - '%WINDIR%\Tasks\*'
