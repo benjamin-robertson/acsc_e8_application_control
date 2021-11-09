@@ -83,14 +83,14 @@ class acsc_e8_application_control (
     dll_applocker_rules    => $dll_applocker_rules,
   }
 
-  # Set rule status
-  class { 'acsc_e8_application_control::rule_status':
-    executable_rules   => $executable_rules,
-    msi_rules          => $msi_rules,
-    dll_rules          => $dll_rules,
-    script_rules       => $script_rules,
-    packaged_app_rules => $packaged_app_rules,
-  }
+  # Set rule status - no longer required. 
+  #class { 'acsc_e8_application_control::rule_status':
+  #  executable_rules   => $executable_rules,
+  #  msi_rules          => $msi_rules,
+  #  dll_rules          => $dll_rules,
+  #  script_rules       => $script_rules,
+  #  packaged_app_rules => $packaged_app_rules,
+  #}
 
   if $start_service {
     include acsc_e8_application_control::service
