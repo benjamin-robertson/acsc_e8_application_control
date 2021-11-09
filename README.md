@@ -29,7 +29,7 @@ See [here][2] page 2 for information on which applocker rules will be configured
 In addition, the c:\choco will also be whitelisted for executables to allow chocolatey to run from its default directly. Chocolate is commonly used in conjunction with Puppet on Window for package management. [Chocolately][3]
 
 ## **Warning** 
-Please only apply this module to test nodes initially. Applocker can prevent application from running and could cause outages in production systems. 
+**Please only apply this module to test nodes initially. Applocker can prevent application from running and could cause outages in production systems.**
 
 ### Setup Requirements
 
