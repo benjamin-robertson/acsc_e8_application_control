@@ -46,14 +46,14 @@ The following modules are dependencies are required acsc_e8_application_control
 
 Standard defaults
 
-``class { 'acsc_e8_application_control' 
-   executable_rules   => 'Enabled',
-   msi_rules          => 'Enabled',
-   dll_rules          => 'Enabled',
-   script_rules       => 'Enabled',
-   packaged_app_rules => 'Enabled',
-   start_service      => true,
-}``
+`class { 'acsc_e8_application_control'`
+`   executable_rules   => 'Enabled',`
+`   msi_rules          => 'Enabled',`
+`   dll_rules          => 'Enabled',`
+`   script_rules       => 'Enabled',`
+`   packaged_app_rules => 'Enabled',`
+`   start_service      => true,`
+`}`
 
 Additional applocker rules can be specified as shown. Hiera is preferred method to configure and manage large hash sets
 
