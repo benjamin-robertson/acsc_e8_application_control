@@ -16,5 +16,4 @@ All notable changes to this project will be documented in this file.
 - Windows 2016/2019 will throw error 1st Puppet run when activating the AppIDSvc, this is due to it being a [protected service][1] subsequent runs will run clean.
 
 
-
 [1]: https://docs.microsoft.com/en-us/windows/win32/services/protecting-anti-malware-services-
