@@ -34,6 +34,7 @@ class acsc_e8_application_control::rules (
     }
   } elsif $executable_rules == 'Audit' {
     $exec_applocker_rules.each | String $name, Hash $rule | {
+      notify { 'Audit rule ran':}
       applocker_rule { $name:
         ensure            => $rule['ensure'],
         action            => $rule['action'],
