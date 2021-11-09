@@ -81,6 +81,11 @@ class acsc_e8_application_control (
     appx_applocker_rules   => $appx_applocker_rules,
     script_applocker_rules => $script_applocker_rules,
     dll_applocker_rules    => $dll_applocker_rules,
+    executable_rules       => $executable_rules,
+    msi_rules              => $msi_rules,
+    dll_rules              => $dll_rules,
+    script_rules           => $script_rules,
+    packaged_app_rules     => $packaged_app_rules,
   }
 
   # Set rule status - no longer required. 
