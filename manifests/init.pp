@@ -77,13 +77,13 @@ class acsc_e8_application_control (
   notify {"exec rules ${exec_applocker_rules}":}
 
   # Apply rules
-  #class { 'acsc_e8_application_control::rules':
-  #  exec_applocker_rules   => $exec_applocker_rules,
-  #  msi_applocker_rules    => $msi_applocker_rules,
-  #  appx_applocker_rules   => $appx_applocker_rules,
-  #  script_applocker_rules => $script_applocker_rules,
-  #  dll_applocker_rules    => $dll_applocker_rules,
-  #}
+  class { 'acsc_e8_application_control::rules':
+    exec_applocker_rules   => $exec_applocker_rules,
+    msi_applocker_rules    => $msi_applocker_rules,
+    appx_applocker_rules   => $appx_applocker_rules,
+    script_applocker_rules => $script_applocker_rules,
+    dll_applocker_rules    => $dll_applocker_rules,
+  }
 
   # Set rule status
   class { 'acsc_e8_application_control::rule_status':
@@ -99,6 +99,6 @@ class acsc_e8_application_control (
   }
 
   # Apply applocker rules before starting the service
-  #Class['acsc_e8_application_control::rules'] -> Class['acsc_e8_application_control::rule_status'] -> Class['acsc_e8_application_control::service']
+  Class['acsc_e8_application_control::rules'] -> Class['acsc_e8_application_control::rule_status'] -> Class['acsc_e8_application_control::service']
 
 }
