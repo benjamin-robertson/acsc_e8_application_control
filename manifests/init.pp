@@ -74,7 +74,7 @@ class acsc_e8_application_control (
   $script_applocker_rules = merge($default_script_applocker_rules, $additional_script_applocker_rules)
   $dll_applocker_rules = merge($default_dll_applocker_rules, $additional_dll_applocker_rules)
 
-  notify {"exec rules ${exec_applocker_rules}":}
+  #notify {"exec rules ${exec_applocker_rules}":}
 
   # Apply rules
   class { 'acsc_e8_application_control::rules':
