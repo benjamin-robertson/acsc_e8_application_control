@@ -28,9 +28,10 @@ See [here][2] page 2 for information on which applocker rules will be configured
 
 In addition, the c:\choco will also be whitelisted for executables to allow chocolatey to run from its default directly. Chocolate is commonly used in conjunction with Puppet on Window for package management. [Chocolately][3]
 
-**Warning** Please only apply this module to test nodes initially. Applocker can prevent application from running and could cause outages in production systems. 
+## **Warning** 
+Please only apply this module to test nodes initially. Applocker can prevent application from running and could cause outages in production systems. 
 
-### Setup Requirements **OPTIONAL**
+### Setup Requirements
 
 The following modules are dependencies are required acsc_e8_application_control
 
@@ -43,12 +44,51 @@ The following modules are dependencies are required acsc_e8_application_control
 
 ## Usage
 
+Standard defaults
 
+`class { 'acsc_e8_application_control' 
+   executable_rules   => 'Enabled',
+   msi_rules          => 'Enabled',
+   dll_rules          => 'Enabled',
+   script_rules       => 'Enabled',
+   packaged_app_rules => 'Enabled',
+   start_service      => true,
+}
+
+Additional applocker rules can be specified as shown. Hiera is preferred method to configure and manage large hash sets
+
+`class { 'acsc_e8_application_control' 
+   additional_exec_applocker_rules => { 
+       'Exec c:\temp' => { 
+           'ensure' => 'present', 
+           'action' => 'Allow', 
+           'conditions => {
+               'path': 'c:\temp', 
+           },
+           'description' => 'Allow all users to run executable from c:\temp',
+           'rule_type' => 'path',
+           'type' => 'Exe',
+           'user_or_group_sid' => 'S-1-1-0',
+            } 
+    }
+   executable_rules   => 'Enabled',
+   msi_rules          => 'Enabled',
+   dll_rules          => 'Enabled',
+   script_rules       => 'Enabled',
+   packaged_app_rules => 'Enabled',
+   start_service      => true,
+}
 
 
 ## Limitations
 
 Currently, we are unable to set the Applocker rules to run in audit only. This is due to a limitation in the underlying custom type. 
+
+This module has been tested on
+- Windows Server 2016
+- Windows Server 2019
+
+Windows 10 hasn't been tested, however it expected to work.
 
 ## Development
 
