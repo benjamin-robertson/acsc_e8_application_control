@@ -53,7 +53,7 @@ Standard defaults
    script_rules       => 'Enabled',
    packaged_app_rules => 'Enabled',
    start_service      => true,
-}
+}`
 
 Additional applocker rules can be specified as shown. Hiera is preferred method to configure and manage large hash sets
 
@@ -77,7 +77,7 @@ Additional applocker rules can be specified as shown. Hiera is preferred method 
    script_rules       => 'Enabled',
    packaged_app_rules => 'Enabled',
    start_service      => true,
-}
+}`
 
 
 ## Limitations
