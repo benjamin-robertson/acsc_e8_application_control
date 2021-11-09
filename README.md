@@ -1,8 +1,11 @@
 # acsc_e8_application_control
 
-A Puppet module which automates the setup of ACSC essential 8 application control on Windows without requiring the use of group policy. 
+A Puppet module which automates the setup of the ACSC essential 8 application control on Windows, without requiring the use of group policy. This module allows for application control to be configured at scale as ACSC intended across all Puppet managed environment using a repeatable method.
+
 For more information about applocker: https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview
+
 For more information about Essential 8: https://www.cyber.gov.au/acsc/view-all-content/essential-eight
+
 For more information about Application control: https://www.cyber.gov.au/acsc/view-all-content/publications/implementing-application-control
 
 ## Table of Contents
@@ -11,6 +14,7 @@ For more information about Application control: https://www.cyber.gov.au/acsc/vi
 1. [Setup - The basics of getting started with acsc_e8_application_control](#setup)
     * [What acsc_e8_application_control affects](#what-acsc_e8_application_control-affects)
     * [Setup requirements](#setup-requirements)
+    * [Warning](#Warning)
     * [Beginning with acsc_e8_application_control](#beginning-with-acsc_e8_application_control)
 1. [Usage - Configuration options and additional functionality](#usage)
 1. [Limitations - OS compatibility, etc.](#limitations)
