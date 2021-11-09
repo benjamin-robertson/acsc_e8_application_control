@@ -71,14 +71,14 @@ Additional applocker rules can be specified as shown. Hiera is preferred method 
           'user_or_group_sid' => 'S-1-1-0',
         },
       },
-    executable_rules   => 'Enabled',
-    msi_rules          => 'Enabled',
-    dll_rules          => 'Enabled',
-    script_rules       => 'Enabled',
-    packaged_app_rules => 'Enabled',
-    start_service      => true,
-  }
-}
+      executable_rules   => 'Enabled',
+      msi_rules          => 'Enabled',
+      dll_rules          => 'Enabled',
+      script_rules       => 'Enabled',
+      packaged_app_rules => 'Enabled',
+      start_service      => true,
+      }
+    }
 
 
 ## Limitations
