@@ -109,6 +109,8 @@ To remove the rule change 'ensure' to 'absent' Eg
       }
     }
 
+For more information on how to construct applocker rules, please see https://forge.puppet.com/modules/fervid/applocker documentation. 
+
 ## Limitations
 
 Currently, we are unable to set the Applocker rules to run in audit only. This is due to a limitation in the underlying custom type. 
