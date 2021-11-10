@@ -119,6 +119,8 @@ This module has been tested on
 
 Windows 10 hasn't been tested, however it expected to work.
 
+It can take a few minutes for applocker to apply policies once running Puppet. Especially when setting up applocker for the first time. I have seen it take over 20 minutes in some cases.
+
 ## Development
 
 Open to Pull requests :)
