@@ -58,6 +58,7 @@ class acsc_e8_application_control::rules (
         conditions        => $rule['conditions'],
         exceptions        => $rule['exceptions'],
         description       => $rule['description'],
+        mode              => 'Enabled',
         rule_type         => $rule['rule_type'],
         type              => $rule['type'],
         user_or_group_sid => $rule['user_or_group_sid'],
