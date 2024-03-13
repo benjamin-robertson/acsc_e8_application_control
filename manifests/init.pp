@@ -51,11 +51,11 @@ class acsc_e8_application_control (
   $default_script_applocker_rules = lookup(acsc_e8_application_control::script_applocker_rules)
   $default_dll_applocker_rules = lookup(acsc_e8_application_control::dll_applocker_rules)
   # merge hashes
-  $exec_applocker_rules = merge($default_exec_applocker_rules, $additional_exec_applocker_rules)
-  $msi_applocker_rules = merge($default_msi_applocker_rules, $additional_msi_applocker_rules)
-  $appx_applocker_rules = merge($default_appx_applocker_rules, $additional_appx_applocker_rules)
-  $script_applocker_rules = merge($default_script_applocker_rules, $additional_script_applocker_rules)
-  $dll_applocker_rules = merge($default_dll_applocker_rules, $additional_dll_applocker_rules)
+  $exec_applocker_rules = stdlib::merge($default_exec_applocker_rules, $additional_exec_applocker_rules)
+  $msi_applocker_rules = stdlib::merge($default_msi_applocker_rules, $additional_msi_applocker_rules)
+  $appx_applocker_rules = stdlib::merge($default_appx_applocker_rules, $additional_appx_applocker_rules)
+  $script_applocker_rules = stdlib::merge($default_script_applocker_rules, $additional_script_applocker_rules)
+  $dll_applocker_rules = stdlib::merge($default_dll_applocker_rules, $additional_dll_applocker_rules)
 
   # Apply rules
   class { 'applocker':
