@@ -4,5 +4,8 @@
 fixtures:
   forge_modules:
      stdlib: "puppetlabs/stdlib"
-     applocker: "fervid/applocker"
-     regsitry: "puppetlabs/registry"
+    #  applocker: "fervid/applocker"
+    #  regsitry: "puppetlabs/registry"
+  repositories:
+    applocker:
+      repo: "https://github.com/benjamin-robertson/applocker.git"
