@@ -11,7 +11,7 @@ All notable changes to this project will be documented in this file.
 
 **Known Issues**
 
-- Windows 2016/2019/2022 will throw an error on 1st Puppet run when activating the AppIDSvc, this is due to it being a [protected service][1] subsequent runs will run clean.
+- Windows 2016/2019/2022 will throw an error on 1st Puppet run when activating the AppIDSvc, this is due to it being a [protected service][1], subsequent runs will run clean.
 
 ## Release 0.1.0
 
