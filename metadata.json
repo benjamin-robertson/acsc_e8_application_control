@@ -1,6 +1,6 @@
 {
   "name": "benjaminrobertson-acsc_e8_application_control",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "benjaminrobertson",
   "summary": "Enforces ACSC E8 application control",
   "license": "Apache-2.0",

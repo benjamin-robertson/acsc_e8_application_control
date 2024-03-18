@@ -7,9 +7,6 @@
 ### Classes
 
 * [`acsc_e8_application_control`](#acsc_e8_application_control): Enforce acsc E8 application control
-* [`acsc_e8_application_control::rule_status`](#acsc_e8_application_controlrule_status): A short summary of the purpose of this class
-* [`acsc_e8_application_control::rules`](#acsc_e8_application_controlrules): A short summary of the purpose of this class
-* [`acsc_e8_application_control::service`](#acsc_e8_application_controlservice): A short summary of the purpose of this class
 
 ## Classes
 
@@ -45,8 +42,7 @@ The following parameters are available in the `acsc_e8_application_control` clas
 
 Data type: `Hash`
 
-Additional exec applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/fervid/applocker
-Defaults - {}
+Additional exec applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/benjaminrobertson/applocker/readme
 
 Default value: `{}`
 
@@ -54,8 +50,7 @@ Default value: `{}`
 
 Data type: `Hash`
 
-Additional msi applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/fervid/applocker
-Defaults - {}
+Additional msi applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/benjaminrobertson/applocker/readme
 
 Default value: `{}`
 
@@ -63,8 +58,7 @@ Default value: `{}`
 
 Data type: `Hash`
 
-Additional appx applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/fervid/applocker
-Defaults - {}
+Additional appx applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/benjaminrobertson/applocker/readme
 
 Default value: `{}`
 
@@ -72,8 +66,7 @@ Default value: `{}`
 
 Data type: `Hash`
 
-Additional script applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/fervid/applocker
-Defaults - {}
+Additional script applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/benjaminrobertson/applocker/readme
 
 Default value: `{}`
 
@@ -81,222 +74,55 @@ Default value: `{}`
 
 Data type: `Hash`
 
-Additional dll applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/fervid/applocker
-Defaults - {}
+Additional dll applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/benjaminrobertson/applocker/readme
 
 Default value: `{}`
 
 ##### <a name="executable_rules"></a>`executable_rules`
 
-Data type: `Enum['Enabled']`
+Data type: `Enum['Enabled','AuditOnly']`
 
-Executable rule status, Enabled (or Audit, currently not supported)
-Defaults - Enabled
+Mode for executable rules.
 
-Default value: `'Enabled'`
+Default value: `'AuditOnly'`
 
 ##### <a name="msi_rules"></a>`msi_rules`
 
-Data type: `Enum['Enabled']`
+Data type: `Enum['Enabled','AuditOnly']`
 
-Msi rule status, Enabled (or Audit, currently not supported)
-Defaults - Enabled
+Mode for msi rules.
 
-Default value: `'Enabled'`
+Default value: `'AuditOnly'`
 
 ##### <a name="dll_rules"></a>`dll_rules`
 
-Data type: `Enum['Enabled']`
+Data type: `Enum['Enabled','AuditOnly']`
 
-Dll rule status, Enabled (or Audit, currently not supported)
-Defaults - Enabled
+Mode for dll rules.
 
-Default value: `'Enabled'`
+Default value: `'AuditOnly'`
 
 ##### <a name="script_rules"></a>`script_rules`
 
-Data type: `Enum['Enabled']`
+Data type: `Enum['Enabled','AuditOnly']`
 
-Script rule status, Enabled (or Audit, currently not supported)
-Defaults - Enabled
+Mode for script rules.
 
-Default value: `'Enabled'`
+Default value: `'AuditOnly'`
 
 ##### <a name="packaged_app_rules"></a>`packaged_app_rules`
 
-Data type: `Enum['Enabled']`
+Data type: `Enum['Enabled','AuditOnly']`
 
-Packaged_app_rules rule status, Enabled (or Audit, currently not supported)
-Defaults - Enabled
+Mode for packaged app rules.
 
-Default value: `'Enabled'`
+Default value: `'AuditOnly'`
 
 ##### <a name="start_service"></a>`start_service`
 
 Data type: `Boolean`
 
-Start the appID service, defaults true.
+Start the appID service.
 
 Default value: ``true``
-
-### <a name="acsc_e8_application_controlrule_status"></a>`acsc_e8_application_control::rule_status`
-
-Enforces rule status of each applocker rule type
-
-#### Examples
-
-##### 
-
-```puppet
-private class
-```
-
-#### Parameters
-
-The following parameters are available in the `acsc_e8_application_control::rule_status` class:
-
-* [`executable_rules`](#executable_rules)
-* [`msi_rules`](#msi_rules)
-* [`dll_rules`](#dll_rules)
-* [`script_rules`](#script_rules)
-* [`packaged_app_rules`](#packaged_app_rules)
-
-##### <a name="executable_rules"></a>`executable_rules`
-
-Data type: `Enum['Audit','Enabled']`
-
-
-
-##### <a name="msi_rules"></a>`msi_rules`
-
-Data type: `Enum['Audit','Enabled']`
-
-
-
-##### <a name="dll_rules"></a>`dll_rules`
-
-Data type: `Enum['Audit','Enabled']`
-
-
-
-##### <a name="script_rules"></a>`script_rules`
-
-Data type: `Enum['Audit','Enabled']`
-
-
-
-##### <a name="packaged_app_rules"></a>`packaged_app_rules`
-
-Data type: `Enum['Audit','Enabled']`
-
-
-
-### <a name="acsc_e8_application_controlrules"></a>`acsc_e8_application_control::rules`
-
-Sets applocker rules
-
-#### Examples
-
-##### 
-
-```puppet
-private class
-```
-
-#### Parameters
-
-The following parameters are available in the `acsc_e8_application_control::rules` class:
-
-* [`exec_applocker_rules`](#exec_applocker_rules)
-* [`msi_applocker_rules`](#msi_applocker_rules)
-* [`appx_applocker_rules`](#appx_applocker_rules)
-* [`script_applocker_rules`](#script_applocker_rules)
-* [`dll_applocker_rules`](#dll_applocker_rules)
-* [`executable_rules`](#executable_rules)
-* [`msi_rules`](#msi_rules)
-* [`dll_rules`](#dll_rules)
-* [`script_rules`](#script_rules)
-* [`packaged_app_rules`](#packaged_app_rules)
-
-##### <a name="exec_applocker_rules"></a>`exec_applocker_rules`
-
-Data type: `Hash`
-
-
-
-##### <a name="msi_applocker_rules"></a>`msi_applocker_rules`
-
-Data type: `Hash`
-
-
-
-##### <a name="appx_applocker_rules"></a>`appx_applocker_rules`
-
-Data type: `Hash`
-
-
-
-##### <a name="script_applocker_rules"></a>`script_applocker_rules`
-
-Data type: `Hash`
-
-
-
-##### <a name="dll_applocker_rules"></a>`dll_applocker_rules`
-
-Data type: `Hash`
-
-
-
-##### <a name="executable_rules"></a>`executable_rules`
-
-Data type: `Enum['Audit','Enabled']`
-
-
-
-Default value: `'Enabled'`
-
-##### <a name="msi_rules"></a>`msi_rules`
-
-Data type: `Enum['Audit','Enabled']`
-
-
-
-Default value: `'Enabled'`
-
-##### <a name="dll_rules"></a>`dll_rules`
-
-Data type: `Enum['Audit','Enabled']`
-
-
-
-Default value: `'Enabled'`
-
-##### <a name="script_rules"></a>`script_rules`
-
-Data type: `Enum['Audit','Enabled']`
-
-
-
-Default value: `'Enabled'`
-
-##### <a name="packaged_app_rules"></a>`packaged_app_rules`
-
-Data type: `Enum['Audit','Enabled']`
-
-
-
-Default value: `'Enabled'`
-
-### <a name="acsc_e8_application_controlservice"></a>`acsc_e8_application_control::service`
-
-Starts applocker service
-
-#### Examples
-
-##### 
-
-```puppet
-private class
-```
 

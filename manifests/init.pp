@@ -6,31 +6,21 @@
 #   include acsc_e8_application_control
 #
 # @param [Hash] additional_exec_applocker_rules
-#     Additional exec applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/fervid/applocker
-#     Defaults - {}
-#
+#     Additional exec applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/benjaminrobertson/applocker/readme
 # @param [Hash] additional_msi_applocker_rules
-#     Additional msi applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/fervid/applocker
-#     Defaults - {}
-#
+#     Additional msi applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/benjaminrobertson/applocker/readme
 # @param [Hash] additional_appx_applocker_rules
-#     Additional appx applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/fervid/applocker
-#     Defaults - {}
-#
+#     Additional appx applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/benjaminrobertson/applocker/readme
 # @param [Hash] additional_script_applocker_rules
-#     Additional script applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/fervid/applocker
-#     Defaults - {}
-#
+#     Additional script applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/benjaminrobertson/applocker/readme
 # @param [Hash] additional_dll_applocker_rules
-#     Additional dll applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/fervid/applocker
-#     Defaults - {}
-#
-# @param [Enum['Enabled','AuditOnly']] executable_rules Mode for executable rules, Default: AuditOnly.
-# @param [Enum['Enabled','AuditOnly']] msi_rules Mode for msi rules, Default: AuditOnly.
-# @param [Enum['Enabled','AuditOnly']] dll_rules Mode for dll rules, Default: AuditOnly.
-# @param [Enum['Enabled','AuditOnly']] script_rules Mode for script rules, Default: AuditOnly.
-# @param [Enum['Enabled','AuditOnly']] packaged_app_rules Mode for packaged app rules, Default: AuditOnly.
-# @param [Boolean] start_service Start the appID service, defaults true.
+#     Additional dll applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/benjaminrobertson/applocker/readme
+# @param [Enum['Enabled','AuditOnly']] executable_rules Mode for executable rules.
+# @param [Enum['Enabled','AuditOnly']] msi_rules Mode for msi rules.
+# @param [Enum['Enabled','AuditOnly']] dll_rules Mode for dll rules.
+# @param [Enum['Enabled','AuditOnly']] script_rules Mode for script rules.
+# @param [Enum['Enabled','AuditOnly']] packaged_app_rules Mode for packaged app rules.
+# @param [Boolean] start_service Start the appID service.
 class acsc_e8_application_control (
   Hash $additional_exec_applocker_rules = {},
   Hash $additional_msi_applocker_rules = {},
