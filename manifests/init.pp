@@ -6,59 +6,32 @@
 #   include acsc_e8_application_control
 #
 # @param [Hash] additional_exec_applocker_rules
-#     Additional exec applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/fervid/applocker
-#     Defaults - {}
-#
+#     Additional exec applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/benjaminrobertson/applocker/readme
 # @param [Hash] additional_msi_applocker_rules
-#     Additional msi applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/fervid/applocker
-#     Defaults - {}
-#
+#     Additional msi applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/benjaminrobertson/applocker/readme
 # @param [Hash] additional_appx_applocker_rules
-#     Additional appx applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/fervid/applocker
-#     Defaults - {}
-#
+#     Additional appx applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/benjaminrobertson/applocker/readme
 # @param [Hash] additional_script_applocker_rules
-#     Additional script applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/fervid/applocker
-#     Defaults - {}
-#
+#     Additional script applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/benjaminrobertson/applocker/readme
 # @param [Hash] additional_dll_applocker_rules
-#     Additional dll applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/fervid/applocker
-#     Defaults - {}
-#
-# @param [Enum['Enabled']] executable_rules
-#     Executable rule status, Enabled (or Audit, currently not supported)
-#     Defaults - Enabled
-#
-# @param [Enum['Enabled']] msi_rules
-#     Msi rule status, Enabled (or Audit, currently not supported)
-#     Defaults - Enabled
-#
-# @param [Enum['Enabled']] dll_rules
-#     Dll rule status, Enabled (or Audit, currently not supported)
-#     Defaults - Enabled
-#
-# @param [Enum['Enabled']] script_rules
-#     Script rule status, Enabled (or Audit, currently not supported)
-#     Defaults - Enabled
-#
-# @param [Enum['Enabled']] packaged_app_rules
-#     Packaged_app_rules rule status, Enabled (or Audit, currently not supported)
-#     Defaults - Enabled
-#
-# @param [Boolean] start_service
-#     Start the appID service, defaults true.
-#
+#     Additional dll applocker rules. merged with existing ACSC rules see https://forge.puppet.com/modules/benjaminrobertson/applocker/readme
+# @param [Enum['Enabled','AuditOnly']] executable_rules Mode for executable rules.
+# @param [Enum['Enabled','AuditOnly']] msi_rules Mode for msi rules.
+# @param [Enum['Enabled','AuditOnly']] dll_rules Mode for dll rules.
+# @param [Enum['Enabled','AuditOnly']] script_rules Mode for script rules.
+# @param [Enum['Enabled','AuditOnly']] packaged_app_rules Mode for packaged app rules.
+# @param [Boolean] start_service Start the appID service.
 class acsc_e8_application_control (
   Hash $additional_exec_applocker_rules = {},
   Hash $additional_msi_applocker_rules = {},
   Hash $additional_appx_applocker_rules = {},
   Hash $additional_script_applocker_rules = {},
   Hash $additional_dll_applocker_rules = {},
-  Enum['Enabled'] $executable_rules = 'Enabled',
-  Enum['Enabled'] $msi_rules = 'Enabled',
-  Enum['Enabled'] $dll_rules = 'Enabled',
-  Enum['Enabled'] $script_rules = 'Enabled',
-  Enum['Enabled'] $packaged_app_rules = 'Enabled',
+  Enum['Enabled','AuditOnly'] $executable_rules = 'AuditOnly',
+  Enum['Enabled','AuditOnly'] $msi_rules = 'AuditOnly',
+  Enum['Enabled','AuditOnly'] $dll_rules = 'AuditOnly',
+  Enum['Enabled','AuditOnly'] $script_rules = 'AuditOnly',
+  Enum['Enabled','AuditOnly'] $packaged_app_rules = 'AuditOnly',
   Boolean $start_service = true,
 ) {
   # lookup default rules
@@ -68,14 +41,14 @@ class acsc_e8_application_control (
   $default_script_applocker_rules = lookup(acsc_e8_application_control::script_applocker_rules)
   $default_dll_applocker_rules = lookup(acsc_e8_application_control::dll_applocker_rules)
   # merge hashes
-  $exec_applocker_rules = merge($default_exec_applocker_rules, $additional_exec_applocker_rules)
-  $msi_applocker_rules = merge($default_msi_applocker_rules, $additional_msi_applocker_rules)
-  $appx_applocker_rules = merge($default_appx_applocker_rules, $additional_appx_applocker_rules)
-  $script_applocker_rules = merge($default_script_applocker_rules, $additional_script_applocker_rules)
-  $dll_applocker_rules = merge($default_dll_applocker_rules, $additional_dll_applocker_rules)
+  $exec_applocker_rules = $default_exec_applocker_rules + $additional_exec_applocker_rules
+  $msi_applocker_rules = $default_msi_applocker_rules + $additional_msi_applocker_rules
+  $appx_applocker_rules = $default_appx_applocker_rules + $additional_appx_applocker_rules
+  $script_applocker_rules = $default_script_applocker_rules + $additional_script_applocker_rules
+  $dll_applocker_rules = $default_dll_applocker_rules + $additional_dll_applocker_rules
 
   # Apply rules
-  class { 'acsc_e8_application_control::rules':
+  class { 'applocker':
     exec_applocker_rules   => $exec_applocker_rules,
     msi_applocker_rules    => $msi_applocker_rules,
     appx_applocker_rules   => $appx_applocker_rules,
@@ -86,22 +59,6 @@ class acsc_e8_application_control (
     dll_rules              => $dll_rules,
     script_rules           => $script_rules,
     packaged_app_rules     => $packaged_app_rules,
+    start_service          => $start_service,
   }
-
-  # Set rule status - not currently working
-  #class { 'acsc_e8_application_control::rule_status':
-  #  executable_rules   => $executable_rules,
-  #  msi_rules          => $msi_rules,
-  #  dll_rules          => $dll_rules,
-  #  script_rules       => $script_rules,
-  #  packaged_app_rules => $packaged_app_rules,
-  #}
-
-  if $start_service {
-    include acsc_e8_application_control::service
-  }
-
-  # Apply applocker rules before starting the service
-  Class['acsc_e8_application_control::rules'] -> Class['acsc_e8_application_control::service']
-
 }
