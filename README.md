@@ -114,6 +114,6 @@ It can take a few minutes for applocker to apply policies once running Puppet. E
 Open to Pull requests :)
 
 [1]: https://github.com/benjamin-robertson/acsc_e8_application_control/blob/main/files/PROTECT%20-%20Implementing%20Application%20Control%20(October%202021).pdf
-[2]: https://www.cyber.gov.au/sites/default/files/2021-10/PROTECT%20-%20Implementing%20Application%20Control%20%28October%202021%29.pdf
+[2]: https://www.cyber.gov.au/sites/default/files/2023-11/PROTECT%20-%20Implementing%20Application%20Control%20%28November%202023%29.pdf
 [3]: https://chocolatey.org/
 [4]: https://forge.puppet.com/modules/benjaminrobertson/applocker
