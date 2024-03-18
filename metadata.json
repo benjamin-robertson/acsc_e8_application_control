@@ -5,6 +5,8 @@
   "summary": "Enforces ACSC E8 application control",
   "license": "Apache-2.0",
   "source": "https://github.com/benjamin-robertson/acsc_e8_application_control",
+  "project_page": "https://github.com/benjamin-robertson/acsc_e8_application_control",
+  "issues_url": "https://github.com/benjamin-robertson/acsc_e8_application_control/issues",
   "dependencies": [
     {
       "name": "benjaminrobertson/applocker",
