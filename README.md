@@ -104,6 +104,7 @@ For more information on how to construct applocker rules, please see https://for
 This module has been tested on
 - Windows Server 2016
 - Windows Server 2019
+- Windows Server 2022
 
 Windows 10 hasn't been tested, however it expected to work.
 
