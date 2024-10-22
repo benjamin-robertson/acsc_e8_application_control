@@ -26,19 +26,19 @@ include acsc_e8_application_control
 
 The following parameters are available in the `acsc_e8_application_control` class:
 
-* [`additional_exec_applocker_rules`](#additional_exec_applocker_rules)
-* [`additional_msi_applocker_rules`](#additional_msi_applocker_rules)
-* [`additional_appx_applocker_rules`](#additional_appx_applocker_rules)
-* [`additional_script_applocker_rules`](#additional_script_applocker_rules)
-* [`additional_dll_applocker_rules`](#additional_dll_applocker_rules)
-* [`executable_rules`](#executable_rules)
-* [`msi_rules`](#msi_rules)
-* [`dll_rules`](#dll_rules)
-* [`script_rules`](#script_rules)
-* [`packaged_app_rules`](#packaged_app_rules)
-* [`start_service`](#start_service)
+* [`additional_exec_applocker_rules`](#-acsc_e8_application_control--additional_exec_applocker_rules)
+* [`additional_msi_applocker_rules`](#-acsc_e8_application_control--additional_msi_applocker_rules)
+* [`additional_appx_applocker_rules`](#-acsc_e8_application_control--additional_appx_applocker_rules)
+* [`additional_script_applocker_rules`](#-acsc_e8_application_control--additional_script_applocker_rules)
+* [`additional_dll_applocker_rules`](#-acsc_e8_application_control--additional_dll_applocker_rules)
+* [`executable_rules`](#-acsc_e8_application_control--executable_rules)
+* [`msi_rules`](#-acsc_e8_application_control--msi_rules)
+* [`dll_rules`](#-acsc_e8_application_control--dll_rules)
+* [`script_rules`](#-acsc_e8_application_control--script_rules)
+* [`packaged_app_rules`](#-acsc_e8_application_control--packaged_app_rules)
+* [`start_service`](#-acsc_e8_application_control--start_service)
 
-##### <a name="additional_exec_applocker_rules"></a>`additional_exec_applocker_rules`
+##### <a name="-acsc_e8_application_control--additional_exec_applocker_rules"></a>`additional_exec_applocker_rules`
 
 Data type: `Hash`
 
@@ -46,7 +46,7 @@ Additional exec applocker rules. merged with existing ACSC rules see https://for
 
 Default value: `{}`
 
-##### <a name="additional_msi_applocker_rules"></a>`additional_msi_applocker_rules`
+##### <a name="-acsc_e8_application_control--additional_msi_applocker_rules"></a>`additional_msi_applocker_rules`
 
 Data type: `Hash`
 
@@ -54,7 +54,7 @@ Additional msi applocker rules. merged with existing ACSC rules see https://forg
 
 Default value: `{}`
 
-##### <a name="additional_appx_applocker_rules"></a>`additional_appx_applocker_rules`
+##### <a name="-acsc_e8_application_control--additional_appx_applocker_rules"></a>`additional_appx_applocker_rules`
 
 Data type: `Hash`
 
@@ -62,7 +62,7 @@ Additional appx applocker rules. merged with existing ACSC rules see https://for
 
 Default value: `{}`
 
-##### <a name="additional_script_applocker_rules"></a>`additional_script_applocker_rules`
+##### <a name="-acsc_e8_application_control--additional_script_applocker_rules"></a>`additional_script_applocker_rules`
 
 Data type: `Hash`
 
@@ -70,7 +70,7 @@ Additional script applocker rules. merged with existing ACSC rules see https://f
 
 Default value: `{}`
 
-##### <a name="additional_dll_applocker_rules"></a>`additional_dll_applocker_rules`
+##### <a name="-acsc_e8_application_control--additional_dll_applocker_rules"></a>`additional_dll_applocker_rules`
 
 Data type: `Hash`
 
@@ -78,7 +78,7 @@ Additional dll applocker rules. merged with existing ACSC rules see https://forg
 
 Default value: `{}`
 
-##### <a name="executable_rules"></a>`executable_rules`
+##### <a name="-acsc_e8_application_control--executable_rules"></a>`executable_rules`
 
 Data type: `Enum['Enabled','AuditOnly']`
 
@@ -86,7 +86,7 @@ Mode for executable rules.
 
 Default value: `'AuditOnly'`
 
-##### <a name="msi_rules"></a>`msi_rules`
+##### <a name="-acsc_e8_application_control--msi_rules"></a>`msi_rules`
 
 Data type: `Enum['Enabled','AuditOnly']`
 
@@ -94,7 +94,7 @@ Mode for msi rules.
 
 Default value: `'AuditOnly'`
 
-##### <a name="dll_rules"></a>`dll_rules`
+##### <a name="-acsc_e8_application_control--dll_rules"></a>`dll_rules`
 
 Data type: `Enum['Enabled','AuditOnly']`
 
@@ -102,7 +102,7 @@ Mode for dll rules.
 
 Default value: `'AuditOnly'`
 
-##### <a name="script_rules"></a>`script_rules`
+##### <a name="-acsc_e8_application_control--script_rules"></a>`script_rules`
 
 Data type: `Enum['Enabled','AuditOnly']`
 
@@ -110,7 +110,7 @@ Mode for script rules.
 
 Default value: `'AuditOnly'`
 
-##### <a name="packaged_app_rules"></a>`packaged_app_rules`
+##### <a name="-acsc_e8_application_control--packaged_app_rules"></a>`packaged_app_rules`
 
 Data type: `Enum['Enabled','AuditOnly']`
 
@@ -118,11 +118,11 @@ Mode for packaged app rules.
 
 Default value: `'AuditOnly'`
 
-##### <a name="start_service"></a>`start_service`
+##### <a name="-acsc_e8_application_control--start_service"></a>`start_service`
 
 Data type: `Boolean`
 
 Start the appID service.
 
-Default value: ``true``
+Default value: `true`
 
