@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## Release 1.1.0
+
+**Features**
+
+- Bumped supported [benjaminrobertson-applocker][3] version. 
+- Bumped pdk version
+- Added lint/unit tests to github actions.
+
 ## Release 1.0.0
 
 **Features**
@@ -29,3 +37,4 @@ All notable changes to this project will be documented in this file.
 
 [1]: https://docs.microsoft.com/en-us/windows/win32/services/protecting-anti-malware-services-
 [2]: https://forge.puppet.com/modules/benjaminrobertson/applocker
+[3]: https://forge.puppet.com/modules/benjaminrobertson/applocker/readme

@@ -22,17 +22,17 @@
 # @param [Enum['Enabled','AuditOnly']] packaged_app_rules Mode for packaged app rules.
 # @param [Boolean] start_service Start the appID service.
 class acsc_e8_application_control (
-  Hash $additional_exec_applocker_rules = {},
-  Hash $additional_msi_applocker_rules = {},
-  Hash $additional_appx_applocker_rules = {},
-  Hash $additional_script_applocker_rules = {},
-  Hash $additional_dll_applocker_rules = {},
-  Enum['Enabled','AuditOnly'] $executable_rules = 'AuditOnly',
-  Enum['Enabled','AuditOnly'] $msi_rules = 'AuditOnly',
-  Enum['Enabled','AuditOnly'] $dll_rules = 'AuditOnly',
-  Enum['Enabled','AuditOnly'] $script_rules = 'AuditOnly',
-  Enum['Enabled','AuditOnly'] $packaged_app_rules = 'AuditOnly',
-  Boolean $start_service = true,
+  Hash                        $additional_exec_applocker_rules   = {},
+  Hash                        $additional_msi_applocker_rules    = {},
+  Hash                        $additional_appx_applocker_rules   = {},
+  Hash                        $additional_script_applocker_rules = {},
+  Hash                        $additional_dll_applocker_rules    = {},
+  Enum['Enabled','AuditOnly'] $executable_rules                  = 'AuditOnly',
+  Enum['Enabled','AuditOnly'] $msi_rules                         = 'AuditOnly',
+  Enum['Enabled','AuditOnly'] $dll_rules                         = 'AuditOnly',
+  Enum['Enabled','AuditOnly'] $script_rules                      = 'AuditOnly',
+  Enum['Enabled','AuditOnly'] $packaged_app_rules                = 'AuditOnly',
+  Boolean                     $start_service                     = true,
 ) {
   # lookup default rules
   $default_exec_applocker_rules = lookup(acsc_e8_application_control::exec_applocker_rules)

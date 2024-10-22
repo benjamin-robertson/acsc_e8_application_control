@@ -104,8 +104,9 @@ For more information on how to construct applocker rules, please see https://for
 This module has been tested on
 - Windows Server 2016
 - Windows Server 2019
+- Windows Server 2022
 
-Windows 10 hasn't been tested, however it expected to work.
+Windows 10 and 11 hasn't been tested, however it expected to work.
 
 It can take a few minutes for applocker to apply policies once running Puppet. Especially when setting up applocker for the first time. I have seen it take over 20 minutes in some cases.
 
